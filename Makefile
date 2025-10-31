@@ -10,12 +10,12 @@ build/exenv: build
 	chmod +x build/exenv
 
 build:
-	mkdir build
+	mkdir -p build
 
 clean:
 	rm -rf build
 
 install: build/exenv exenv.1
-	install -t $(MANDIR) exenv.1
-	install -t $(BINDIR) build/exenv
+	install -D -t $(BINDIR) build/exenv
+	install -D -t $(MANDIR) exenv.1
 
