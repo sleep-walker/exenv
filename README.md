@@ -9,7 +9,8 @@ exenv - execute a command in the environment of a specified process
 # DESCRIPTION
 
 The **exenv** command allows you to execute a new process with the same
-environment variables as a specified running process.
+environment variables as a specified running process. As current
+implementation relies on /proc filesystem, it can run on Linux only.
 
 **\<PID\>**
 
