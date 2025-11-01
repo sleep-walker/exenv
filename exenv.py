@@ -41,15 +41,14 @@ def print_usage():
     print("Usage: exenv <PID> <command> [args]")    
         
 def parse_command_line():
+    if len(sys.argv) < 3:
+        print_usage()
+        sys.exit(1)
 
     try:
         pid = int(sys.argv[1])
     except ValueError:
         print("Invalid PID: {pid}".format(pid=sys.argv[1]))
-        print_usage()
-        sys.exit(1)
-
-    if len(sys.argv) < 3:
         print_usage()
         sys.exit(1)
 
