@@ -32,7 +32,7 @@ def exec_process_with_env(pid, command):
     if env_vars is not None:
         env = {key: value for key, value in env_vars.items()}
         try:
-            os.execve(command[0], command, env)
+            os.execvpe(command[0], command, env)
         except Exception as e:
             print("Failed to execute command: {e}".format(e=e))
             sys.exit(1)
